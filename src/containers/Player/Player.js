@@ -161,9 +161,11 @@ class Player extends React.Component {
       }
     }, () => {
       this.timerInterval = setInterval(() => {
-        this.setState({
-          timer: Object.assign({}, this.state.timer, { currentTime: this.state.timer.currentTime + 1 })
-        });
+        this.Youtube.getCurrentTime().then(currentTime => {
+          this.setState({
+            timer: Object.assign({}, this.state.timer, { currentTime })
+          });
+        })
       }, 1000);
     });
   }

@@ -6,10 +6,17 @@ import { PlaylistItem, PlaylistItems } from "../PlaylistItems";
 
 import fixtures from "../__fixtures__/PlaylistItems";
 
-let jsdom = require("jsdom").jsdom;
+/**
+ * mock document and window for unit tests
+ */
 
-global.document = jsdom("");
-global.window = document.defaultView;
+if(process.env.NODE_ENV === "unit") {
+  let jsdom = require("jsdom").jsdom;
+
+  global.document = jsdom("");
+  global.window = document.defaultView;
+}
+
 
 describe("PlaylistItem", () => {
 
