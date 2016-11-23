@@ -1,0 +1,52 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "globalReturn": false,
+      "jsx": true,
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "settings": {
+    "import/ignore": [
+      "node_modules",
+      "\\.(json)$"
+    ],
+    "import/resolver": "webpack"
+  },
+  "env": {
+    "es6": true,
+    "browser": true,
+    "commonjs": true
+  },
+  "plugins": [
+    "react", "import"
+  ],
+  "extends": ["eslint:recommended", "plugin:import/errors", "plugin:import/warnings"],
+  "rules": {
+    "quotes": ["warn", "double", {"allowTemplateLiterals": true}],
+    "no-mixed-spaces-and-tabs": ["warn"],
+    "indent": ["error", 2, {
+      "SwitchCase": 1
+    }],
+    "semi": ["error"],
+    "comma-dangle": ["error"],
+
+    "react/jsx-no-undef": ["warn"],
+    "react/jsx-handler-names": ["warn"],
+    "react/jsx-uses-react": ["warn"],
+    "react/jsx-uses-vars": ["warn"],
+    "react/no-deprecated": ["error"],
+    "react/no-direct-mutation-state": ["error"],
+    "react/react-in-jsx-scope": ["warn"],
+    "react/require-render-return": ["warn"],
+    "react/sort-prop-types": ["warn", {
+      "callbacksLast": true,
+      "ignoreCase": true
+    }],
+    "react/prop-types": ["error", {
+      "ignore": ["handleSubmit", "fields"]
+    }]
+  }
+}

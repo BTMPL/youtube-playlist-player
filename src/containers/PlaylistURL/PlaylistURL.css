@@ -1,0 +1,11 @@
+.PlaylistURL {
+	margin-bottom: 10px;
+}
+
+.PlaylistURL input[type="text"] {
+	width: 80%;
+}
+
+.PlaylistURL input[type="button"] {
+	width: 19%;
+}
