@@ -3,14 +3,22 @@ let webpack = require("webpack");
 
 module.exports = function(config) {
 	config.set({
-		browsers: ["PhantomJS", "Chrome"],
+		browsers: ["PhantomJS"],
 		singleRun: true, // should the browser auto-close after testing
 		frameworks: ["mocha"], // what testing frameworks will we be using
 		files: ["tests.webpack.js"], // files to open in browser; testing entry point
 		preprocessors: {
-			"tests.webpack.js": ["webpack"]
+			"tests.webpack.js": ["webpack", "sourcemap"]
 		},
-		reporters: ["dots"],
-		webpack: require("../../webpack.config.js")		
+		reporters: ["dots", "coverage"],
+		webpack: require("../../webpack.config.js"),
+		coverageReporter: {
+			dir: "../../coverage/",
+			reporters: [{
+				type: "html",
+				subdir: "html"			
+			}]
+		},
+		captureTimeout: 10 * 1000
 	})
 }

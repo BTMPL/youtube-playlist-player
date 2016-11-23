@@ -1,6 +1,7 @@
 var webpack =require("webpack");
 
 module.exports = {
+	devtool: 'source-map',
 	entry: ['./src/index.js'],
 	output: {
 		path: './dist',
@@ -17,6 +18,13 @@ module.exports = {
 		})
 	],
 	module: {
+		preLoaders: [
+			{
+				test: /\.js$/,
+				loader: 'isparta',
+				exclude: /(__test__|__fixtures__|config|node_modules)/,
+			}
+		],
 		loaders: [
 			{
 				test: /\.js$/,
