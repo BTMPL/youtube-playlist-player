@@ -20,7 +20,11 @@ if(process.env.NODE_ENV === "unit") {
 
 describe("PlaylistItem", () => {
 
-  it("Renders", () => {
+  it("Doesn't render when no item passed", () => {
+    expect(shallow(<PlaylistItem current={true} playSong={() => {}} item={{}} />).text()).to.equal('');
+  });
+
+  it("Renders when passed an item", () => {
     expect(shallow(<PlaylistItem current={true} playSong={() => {}} item={fixtures.items[0]} />).text()).to.contain(fixtures.items[0].snippet.title);
   });
 
