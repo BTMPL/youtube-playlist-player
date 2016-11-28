@@ -36,7 +36,7 @@ module.exports = {
 				loader: "style-loader!css-loader?modules"
 			},
 			/**
-			 * json loader is required when using enyme
+			 * json loader is required when using enzyme
 			 */			
 			{
 				test: /\.json$/,
