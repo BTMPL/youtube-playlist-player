@@ -197,11 +197,14 @@ class Player extends React.Component {
   }
 }
 
-Player.propTypes = {
-  handleClick: React.PropTypes.func.isRequired,
+Player.propTypes = {  
   nextSong: React.PropTypes.func.isRequired,
   playbackState: React.PropTypes.string.isRequired,
-  video: React.PropTypes.object
+  video: React.PropTypes.shape({
+    id: React.PropTypes.string.isRequired,
+    title: React.PropTypes.string.isRequired
+  }),
+  handleClick: React.PropTypes.func.isRequired
 };
 
 export default connect((store) => {
