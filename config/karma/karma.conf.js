@@ -11,12 +11,12 @@ module.exports = function(config) {
 			"tests.webpack.js": ["webpack", "sourcemap"]
 		},
 		reporters: ["dots", "coverage"],
-		webpack: require("../../webpack.config.js"),
+		webpack: Object.assign({}, require("../../webpack.config.js"), { entry: null, output: null }),
 		coverageReporter: {
 			dir: "../../coverage/",
 			reporters: [{
 				type: "html",
-				subdir: "html"			
+				subdir: "html"
 			}]
 		},
 		captureTimeout: 10 * 1000

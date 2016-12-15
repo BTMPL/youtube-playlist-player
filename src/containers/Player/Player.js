@@ -190,7 +190,6 @@ class Player extends React.Component {
         </div>
 
         <h1 className={Styles.h1}>{this.props.video.snippet.title}</h1>
-
         <div id="ytplayer" style={{display: "none"}}></div>
       </div>
     );
@@ -203,7 +202,7 @@ Player.propTypes = {
   video: React.PropTypes.shape({
     id: React.PropTypes.string.isRequired,
     title: React.PropTypes.string.isRequired
-  }),
+  }).isRequired,
   handleClick: React.PropTypes.func.isRequired
 };
 
