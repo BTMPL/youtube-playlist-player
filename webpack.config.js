@@ -1,4 +1,4 @@
-var webpack =require("webpack");
+var webpack = require("webpack");
 
 module.exports = {
 	devtool: 'source-map',
@@ -15,7 +15,10 @@ module.exports = {
 			'process.env': {
 				NODE_ENV: JSON.stringify(process.env.NODE_ENV || "development")
 			}
-		})
+		}),
+		new webpack.IgnorePlugin(/react\/addons/),
+    new webpack.IgnorePlugin(/react\/lib\/ReactContext/),
+    new webpack.IgnorePlugin(/react\/lib\/ExecutionEnvironment/)
 	],
 	module: {
 		preLoaders: [
@@ -37,7 +40,7 @@ module.exports = {
 			},
 			/**
 			 * json loader is required when using enzyme
-			 */			
+			 */
 			{
 				test: /\.json$/,
 				loader: "json-loader"

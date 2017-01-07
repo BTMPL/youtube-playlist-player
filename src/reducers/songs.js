@@ -3,7 +3,7 @@ const defaultState = {
   songs: [],
   currentSong: null
 };
-export default (state = defaultState, action) => {
+export default (state = defaultState, action = {}) => {
   switch (action.type) {
     case SONG_CLEAR:
       return Object.assign({}, state, {songs: []});
