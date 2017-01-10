@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 
 import {playSong} from "../../actions/playlist";
 
-import Styles from "./PlaylistItems.css";
+import Styles from "./PlaylistItems.less";
 
 export class PlaylistItem extends React.Component {
   constructor(props) {

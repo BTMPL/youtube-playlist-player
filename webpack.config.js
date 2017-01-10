@@ -21,13 +21,6 @@ module.exports = {
     new webpack.IgnorePlugin(/react\/lib\/ExecutionEnvironment/)
 	],
 	module: {
-		preLoaders: [
-			{
-				test: /\.js$/,
-				loader: 'isparta',
-				exclude: /(__test__|__fixtures__|config|node_modules)/,
-			}
-		],
 		loaders: [
 			{
 				test: /\.js$/,
@@ -38,23 +31,10 @@ module.exports = {
 				test: /\.css$/,
 				loader: "style-loader!css-loader?modules"
 			},
-			/**
-			 * json loader is required when using enzyme
-			 */
 			{
-				test: /\.json$/,
-				loader: "json-loader"
+				test: /\.less$/,
+				loader: "style-loader!css-loader?modules!less-loader"
 			}
 		]
-	},
-	/**
-	 * we need to mock some node built-in modules to be able to
-	 * run the test in browser env
-	 */
-	node: {
-		fs: "empty",
-		net: "empty",
-		child_process: "empty",
-		tls: "empty"
 	}
 };

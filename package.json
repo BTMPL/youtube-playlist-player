@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
@@ -25,6 +26,8 @@
     "eslint-plugin-react": "^6.7.1",
     "jest": "^18.1.0",
     "json-loader": "^0.5.4",
+    "less": "^2.7.2",
+    "less-loader": "^2.2.3",
     "npm-run-all": "^3.1.1",
     "phantomjs-function-bind-polyfill": "^1.0.0",
     "phantomjs-prebuilt": "^2.1.13",
@@ -41,7 +44,10 @@
   },
   "jest": {
     "verbose": true,
-    "coverageReporters": ["html","teamcity"],
+    "coverageReporters": [
+      "html",
+      "teamcity"
+    ],
     "coverageThreshold": {
       "global": {
         "branches": 75,
@@ -49,9 +55,16 @@
         "lines": 75,
         "statements": 75
       }
-    },    
-    "moduleFileExtensions": ["js", "jsx"],
-    "moduleDirectories": ["node_modules", "bower_components", "shared"],
+    },
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "bower_components",
+      "shared"
+    ],
     "moduleNameMapper": {
       "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
     }
