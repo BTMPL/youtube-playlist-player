@@ -51,11 +51,6 @@ describe("Songs actions", () => {
 
     test("no results", () => {
       jest.mock('./__mocks__/axios');
-      let axios = require('axios');
-      axios.get.mockImplementation((p) => {
-        return Promise.resolve({})
-      });
-
       let dispatch = jest.fn();
       actions.loadPlaylist(1)(dispatch);
       expect(dispatch.mock.calls.length).toBe(1);
