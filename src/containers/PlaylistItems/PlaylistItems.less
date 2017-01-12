@@ -1,0 +1,20 @@
+.PlaylistItem {
+	display: block;
+	white-space: pre;
+	overflow: hidden;
+	-ms-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+	padding: 4px;
+	border-bottom: 1px solid #d3d3d3;
+}
+
+.PlaylistItem::before {
+	content: ' ';
+	display: inline-block;
+	width: 13px;
+	line-height: 1;
+}
+
+.PlaylistItem--current::before {
+	content: '⮞';
+}
